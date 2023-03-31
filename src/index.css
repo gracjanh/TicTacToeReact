@@ -1,13 +1,123 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Hubballi', cursive;
+    user-select: none;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+    --color-1: #212226;
+    --color-2: #2E4583;
+    --color-3: #5983FC;
+}
+
+body {
+    background-color: var(--color-1);
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.header {
+    font-size: 5rem;
+    margin-bottom: 4rem;
+    color: var(--color-3);
+}
+
+.caption {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--color-3);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    width: min-content;
+    height: min-content;
+    gap: 8px;
+    background-color: var(--color-1);
+    margin-bottom: 3rem;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: var(--color-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tile:hover {
+    outline: var(--color-3) solid 2px;
+}
+
+.tile-text {
+    color: var(--color-3);
+    font-size: 7rem;
+}
+
+.btn {
+    border: none;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: var(--color-1);
+    color: var(--color-3);
+    border: var(--color-3) solid 2px;
+
+
+
+}
+
+.btn:hover {
+    background-color: var(--color-3);
+    color: var(--color-1);
+}
+
+@media only screen and (max-width: 800px) {
+    .header {
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .caption {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 90px);
+        gap: 7px;
+        margin-bottom: 2.5rem;
+
+    }
+
+    .tile {
+        width: 90px;
+        height: 90px;
+    }
+
+    .tile-text {
+        font-size: 6rem;
+    }
+
+    .btn {
+        padding: 0.8rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        border: var(--color-3) solid 2px;
+    }
 }
